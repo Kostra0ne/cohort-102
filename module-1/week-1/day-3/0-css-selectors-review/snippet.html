@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .page {
+        font-size: 1rem;
+      }
+      .page.product {
+        color: blue;
+      }
+      .page.user {
+        color: red;
+      }
+      .logo + nav {
+      }
+
+      #header_main {
+        background: red;
+      }
+
+      #header_main * {
+        background: green;
+      }
+
+      #nav-main .link {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      #nav-main .link:hover {
+        color: darkgoldenrod;
+      }
+
+      #menhaj {
+        font-size: 3rem;
+      }
+
+      aside#sidebar_main {
+        background: blue;
+      }
+
+      aside#sidebar_main:hover {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="header_main">
+      <a href="" class="logo"></a>
+      <img href="" class="logo mini" />
+    </div>
+
+    <aside id="sidebar_main">ASIDE !!!!</aside>
+
+    <header>
+      <div class="logo">
+        <img src="" alt="" />
+      </div>
+      <nav id="nav-main">
+        <a href="" class="link">home</a>
+        <a href="" class="link">about</a>
+        <a href="" class="link">contact</a>
+      </nav>
+    </header>
+    .link.is-selected
+    <a class="link is-selected"></a>
+    <a class="link is-selected"></a>
+    <a class="link"></a>
+
+    .link > .is-selected
+
+    <div class="link">
+      <div class="is-selected"></div>
+      <div>
+        <div></div>
+      </div>
+    </div>
+
+    <main class="page product">
+      <ul class="list">
+        <li class="product"></li>
+        <li class="product"></li>
+        <li class="product"></li>
+      </ul>
+    </main>
+
+    <main class="page user">
+      <ul class="list hobbies">
+        <li class="hobby"></li>
+        <li class="hobby"></li>
+        <li class="hobby"></li>
+      </ul>
+    </main>
+
+    <!-- p > a -->
+    <!-- .link.is-selected -->
+    <!-- .link .is-selected -->
+    <!-- .is-selected  -->
+    <!-- .intro .link .is-selected -->
+    <p id="intro">
+      <span>
+        <i>hello</i>
+        <a href="">world</a>
+      </span>
+      <a href="/" class="link is-selected">home</a>
+      <a href="/" class="link">about</a>
+      <a href="" class="link">
+        <span class="is-selected"></span>
+      </a>
+    </p>
+
+    <!-- .foo.bar.baz  -->
+    <div class="foo bar baz"></div>
+    <div class="foo bar baz"></div>
+    <div class="foo bar baz"></div>
+    <div class="foo bar baz"></div>
+    <div class="foo bar baz"></div>
+
+    .product.tshirt.on-sale.women
+
+    <div class="product tshirt on-sale women">
+      <div class="product small"></div>
+      <div class="product big"></div>
+      <div class="product"></div>
+    </div>
+
+    <!--  let's check the HTMLDOMTRee tree image !!! -->
+    <!-- body > p -->
+
+    <div class="dev-squad">
+      <ul class="list ironhackers">
+        <li id="kenton" class="ironhacker"></li>
+        <li id="menhaj" class="ironhacker">M</li>
+        <li id="rené" class="ironhacker"></li>
+      </ul>
+    </div>
+  </body>
+</html>

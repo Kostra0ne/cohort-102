@@ -1,0 +1,116 @@
+<!-- ! + tab -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Challenge 1</title>
+    <link rel="stylesheet" href="./index.css" />
+    <!-- launch the server from the terminal with: $ lite-server -->
+  </head>
+  <body>
+    <h1 class="title main">HTML Challenge 1</h1>
+    <p class="text">
+      Reproduce 4 the given examples.<br />
+      Try to be precise !<br />
+      Your code MUST pass the w3c validator !!!<br />
+      Side question : what is the w3c ? :)
+    </p>
+    <!-- h1.title*2 + tab -->
+    <h1 class="title">Lists</h1>
+    <ul class="list">
+      <li class="item">Open visual studio code</li>
+      <li class="item">launch the terminal</li>
+      <li class="item">Launch you browser</li>
+      <li class="item">Open devtools</li>
+      <li class="item">Start coding awesome apps</li>
+    </ul>
+
+    <hr />
+    <!-- ul > li && ol > li  -->
+    <ol class="list">
+      <li class="item">level 1.1</li>
+      <li class="item">
+        <span>level 1.2</span>
+        <ul>
+          <li>
+            <span>level 2.1</span>
+            <ol>
+              <li>level 3.1</li>
+              <li>level 3.2</li>
+              <li>level 3.3</li>
+            </ol>
+          </li>
+          <li>level 2.2</li>
+          <li>level 2.3</li>
+        </ul>
+      </li>
+      <li class="item">level 1.3</li>
+    </ol>
+
+    <h1 class="title">Tables</h1>
+
+    <table id="table-card" class="table">
+      <tbody>
+        <tr>
+          <td>Ace</td>
+          <td>Spade</td>
+        </tr>
+        <tr>
+          <td class="red">Diamond</td>
+          <td class="red">Heart</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <table id="table-complex" class="table">
+      <thead>
+        <tr>
+          <th colspan="2"></th>
+          <th colspan="2">first group</th>
+          <th colspan="2">second group</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Person</th>
+          <th>Singular</th>
+          <th>Plural</th>
+          <th>Singular</th>
+          <th>Plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">present</td>
+          <td>1</td>
+          <td>i code</td>
+          <td>we code</td>
+          <td>i succeed</td>
+          <td>we succeed</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>you code</td>
+          <td>they code</td>
+          <td>you succeed</td>
+          <td>they succeed</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>he/she codes</td>
+          <td>they code</td>
+          <td>he/she succeeds</td>
+          <td>they succed</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="text">
+      Don't forget to indent your code !!!<br />
+      Presentation is part of the job : makes things easier to read, hence to
+      debug and maintain.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+/*
+A CSS RULE IS :
+- 1 (or more) selector(s)
+- a opening curly bracket
+- a set of key/value pairs, separated by a semi-colon
+ex: color: red; background: blue; display: block;
+- a closing curly bracket
+*/
+
+/* rule a */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* rule b */
+body {
+  font-family: Avenir;
+  padding: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* rule c */
+ul,
+ol {
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+ul ul,
+ul ol,
+ol ul {
+  margin: 0;
+}
+
+/* etc. */
+table {
+  margin: 10px 0;
+}
+
+table,
+td,
+th {
+  border: 1px solid;
+}
+
+td,
+th {
+  padding: 4px;
+}
+
+/*  BUSINESS LOGIC STARTS */
+.title {
+  margin: 15px 0 20px;
+  max-width: max-content;
+  border-bottom: 2px solid;
+}
+
+.text {
+  max-width: 540px;
+  padding: 20px;
+  background: #0205148c;
+  border-radius: 0.45rem;
+  color: whitesmoke;
+}
+
+#table-card .red {
+  color: firebrick;
+}
+
+#table-complex {
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+#table-complex th,
+#table-complex td {
+  text-align: center;
+  padding: 5px;
+}

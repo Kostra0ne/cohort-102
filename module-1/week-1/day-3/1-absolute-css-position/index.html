@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Absolute</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .block {
+        width: 200px;
+        height: 200px;
+        background: dodgerblue;
+        color: whitesmoke;
+        margin-bottom: 10px;
+        font-size: 3rem;
+        position: relative;
+      }
+
+      .block.flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .block.fixed {
+        background: red;
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+
+      .dot {
+        height: 42px;
+        width: 42px;
+        border-radius: 50%;
+        background: coral;
+        position: absolute;
+        top: 34px;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="square-1" class="block flex">1</div>
+    <div id="square-2" class="block flex">
+      2
+      <div class="dot">^_^</div>
+    </div>
+    <div class="block">
+      3
+      <div class="dot">:)</div>
+    </div>
+    <div class="block fixed">
+      <div class="dot">: /</div>
+    </div>
+  </body>
+</html>
