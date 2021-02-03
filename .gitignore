@@ -1,3 +1,4 @@
+.DS_Store
 private/
 tests/
 _random/
@@ -9,7 +10,6 @@ module-2/
 module-3/
 
 
-module-1/_labs-soluce-proposals/00-lab-css-recipes-clone/
 module-1/_labs-soluce-proposals/01-lab-css-spotify-clone
 module-1/_labs-soluce-proposals/02-lab-basic-algorithms
 module-1/_labs-soluce-proposals/03-lab-javascript-functions-and-arrays
