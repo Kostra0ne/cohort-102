@@ -46,11 +46,9 @@ const users = [{ name: "maud", score: 10 }, user1, user2, user3];
 const userNames = []; // brand new empty array
 let countOfLetters = 0;
 
-console.log("--------------\n");
-
+console.log("--------------\n");$
 console.log("the full array > ");
 console.log(users);
-
 console.log("--------------\n");
 
 for (let i = 0; i < users.length; i++) {
