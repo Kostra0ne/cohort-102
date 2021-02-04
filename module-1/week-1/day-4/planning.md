@@ -1,0 +1,15 @@
+
+- note: tomorrow 9h00 sharp : 1st assessment on loops/arrays/objects
+- morning :
+- css selectors dictée
+- RQA
+- let / var / const
+- functions / param / return / function scope
+- objects
+- for... in
+- arrays
+- for loop
+- array of objects
+- matrixes
+- Error / catch / throw
+- review other loops (while, do while, for of)
