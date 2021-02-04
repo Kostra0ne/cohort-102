@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*  D.R.Y : don't repeat yourself */
+
+      :root {
+        --square-size: 20px;
+        --color-1: dodgerblue;
+      }
+
+      #b-w-targets {
+        top: var(--size-2);
+        height: 200px;
+        width: 200px;
+        border: solid var(--color-1);
+        position: relative;
+      }
+
+      #b-w-targets .block {
+        width: var(--square-size);
+        height: var(--square-size);
+        background: var(--color-1);
+        position: absolute;
+      }
+
+      #b-w-targets .top {
+        top: 0;
+      }
+      #b-w-targets .right {
+        right: 0;
+      }
+      #b-w-targets .bottom {
+        bottom: 0;
+      }
+      #b-w-targets .left {
+        left: 0;
+      }
+      #b-w-targets .center {
+        bottom: calc((100% - var(--square-size)) / 2);
+        left: calc((100% - var(--square-size)) / 2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="b-w-targets">
+      <div class="block top left"></div>
+      <div class="block top right"></div>
+      <div class="block bottom right"></div>
+      <div class="block bottom left"></div>
+      <div class="block center"></div>
+    </div>
+  </body>
+</html>

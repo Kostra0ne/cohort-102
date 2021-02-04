@@ -42,8 +42,9 @@ for (let prop in user3) {
 
 */
 
-const users = [{ name: "gui", score: 0 }, user1, user2, user3];
+const users = [{ name: "maud", score: 10 }, user1, user2, user3];
 const userNames = []; // brand new empty array
+let countOfLetters = 0;
 
 console.log("--------------\n");
 
@@ -53,11 +54,39 @@ console.log(users);
 console.log("--------------\n");
 
 for (let i = 0; i < users.length; i++) {
-  console.log("each user in the array > ", users[i]);
+  console.log("each user in the array > ", users[i].name.length);
   userNames.push(users[i].name);
+  countOfLetters += users[i].name.length;
 }
 
 console.log("--------------\n");
 
 console.log("only the user names");
 console.log(userNames);
+console.log("count of letters");
+console.log(countOfLetters);
+
+// string "hello" 'hello' `hello`
+// number, 1, -1, 10000, 23 * 2
+// true OR false
+// null
+// undefined
+// {} [] function() {}
+
+const faces = [
+  ["-_-", ":/", "O_o"], // l(3) | index 0
+  // 0     1      2
+  [":)", ":D", "^_^", ";)"], // (l4) | index 1
+  // 0      1     2     3
+];
+
+/*
+
+for (let i = 0; i < faces.length; i++) {
+//   console.log(faces[i]);
+  for (let j = 0; j < faces["?"].length; j++) {
+    console.log(faces["??"]["???"]);
+  }
+}
+
+*/
