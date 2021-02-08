@@ -20,8 +20,7 @@
     - event listener / event listeners
     - classList API
 
-    - global scope
-- this keyword
+    - global scope and this keyword
 
 
 - do you wanna paper time ?
