@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background: silver;
+  margin: 10px;
+  /* transition: background 5s ease-out, height 1s linear; */
+  transition: all 5s ease-out;
+}
+
+.block:hover {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  background: cadetblue;
+}
+
+.circle {
+  align-items: center;
+  background: coral;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  margin: 10px;
+  position: relative;
+  width: 100px;
+}
+
+@keyframes simo-yassine {
+  0% {
+    top: 0;
+    height: 60px;
+    width: 60px;
+  }
+  75% {
+    height: 200px;
+    width: 200px;
+  }
+  100% {
+    top: 100px;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle:hover {
+  animation: rotate 5s infinite linear;
+}
