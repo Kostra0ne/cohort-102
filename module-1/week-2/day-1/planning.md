@@ -22,7 +22,13 @@
 
     - global scope and this keyword
 
+- DIY 2
+    - declare 1 arrays filled with numbers
+    - create a calcSum function taking an array as argument and returning the sum of the array
+    - onclick on a button, trigger calcSum and display the result in a #sum-result div
+
 
 - do you wanna paper time ?
+
 
 

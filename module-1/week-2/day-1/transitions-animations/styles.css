@@ -30,7 +30,7 @@
   justify-content: center;
   height: 100px;
   margin: 10px;
-  position: relative;
+  /* position: relative; */
   width: 100px;
 }
 
@@ -60,6 +60,15 @@
   }
 }
 
+@keyframes up-and-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100px);
+  }
+}
+
 .circle:hover {
-  animation: rotate 5s infinite linear;
+  animation: up-and-down 5s infinite alternate cubic-bezier(0, 0, 1,-0.21);
 }
