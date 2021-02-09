@@ -1,43 +1,102 @@
-function User() {
-  this.name = "test user";
-  this.age = 20;
-  this.hobbies = ["skate", "music"];
-  // return this; // by default
+function Foo() {}
+
+function Bar() {}
+
+/*
+const x = Foo();
+console.log("step 1 >");
+console.log(x);
+
+const y = new Foo(); // i'm execting the constructor form of the function
+// by default, it will create a new instance of the foo function
+const z = new Bar();
+
+console.log("step 2 >");
+console.log(y);
+
+console.log("step 3 >");
+console.log(y instanceof Foo); // what is the modl we used to build this y object ? > Foo
+console.log(typeof y);
+// an instance of a function/class is an object that has been built (constructed, make) with a constructor function 
+
+console.log("step 3 >");
+console.log(z instanceof Bar);
+console.log(typeof z);
+*/
+
+function Alien(name, originPlanet) {
+  this.name = name;
+  this.originPlanet = originPlanet;
 }
 
-function Car(color, brand, price) {
-  if (isNaN(price)) throw new Error("price prop must be of type Number");
-
-  this.wheels = 4;
-  this.color = color;
-  this.brand = brand;
-  this.price = price;
+function IronHacker(
+  name = "unknown hacker",
+  age = null,
+  email = null,
+  pet = null
+) {
+  if (!(this instanceof IronHacker)) {
+    throw new Error("DUHHHH... you just forgot the new keyword");
+  }
+  this.name = name; // feed the name property with the n value
+  this.age = age; // the technical name of feeding in OOP is hydrating
+  this.email = email; // again the returned object will have all those properties set
+  this.pet = pet;
+  //   this.alien = new Alien("Toto", "Coding");
 }
 
-Car.prototype.start = function () {
-  return "vrooom vroom";
+// should return the hacker's name + age + email
+IronHacker.prototype.getFullInfos = function () {
+  //   console.log("@getFullInfos", this);
+  return `
+    this hacker is named ${this.name} and is ${this.age} years old.\n You can reach him/her there : ${this.email};
+  `;
 };
 
-Car.prototype.getCarInfos = function () {
-  return `${this.brand} ${this.color} ${this.price}`;
+IronHacker.prototype.stateYourFavoriteLangage = function () {
+  return "JS of course .... :)";
 };
 
-// const undef = User();
-// console.log(undef);
-// const newUser = new User();
-// console.log(newUser);
+const hacker1 = new IronHacker("simo", 26, "foo@simo.com");
+const hacker2 = new IronHacker("gigi", 24, "gigi@yoga.zen");
+const hacker3 = new IronHacker("frank", 29, "frank@the-tank.org");
 
-const bentley = new Car("red", "bentley", 100000);
-const hondaPrius = new Car("black", "honda", 10000);
-// const fakeCar = new Car(20, "green", "fake");
+// console.log(typeof hacker1);
+// console.log(typeof hacker1.name);
+// console.log(hacker1);
+// console.log(hacker2);
+// console.log(hacker2 === hacker1);
 
-console.log(hondaPrius);
-console.log(bentley);
+// console.log(hacker3);
+// console.log(hacker4.pet.name);
+console.log(hacker1.getFullInfos());
+console.log(hacker2.getFullInfos());
+console.log(hacker3.stateYourFavoriteLangage());
 
-console.log(bentley.start());
-console.log(hondaPrius.start());
-console.log("-------------------");
-console.log(bentley.getCarInfos());
-console.log(hondaPrius.getCarInfos());
+function Player(n) {
+  this.name = n;
+  this.lifePoints = 10;
+}
 
-// console.log(fakeCar);
+function Ennemy(n) {
+  this.name = n;
+  this.lifePoints = 5;
+}
+
+
+const player1 = new Player("Yuka");
+const player2 = new Player("Gui");
+const enemyOne = new Ennemy("Skull");
+
+
+console.log(player1);
+
+player1.lifePoints += 1;
+
+console.log(player2);
+console.log(player1);
+
+console.log("same object ? false ");
+console.log(player1 === player2);
+console.log("instance of the same construct ? true");
+console.log(player1 instanceof Player === player2 instanceof Player);
