@@ -1,65 +1,59 @@
-// function Car(color, brand, price) {
-//   if (isNaN(price)) throw new Error("price prop must be of type Number");
-
-//   this.wheels = 4;
-//   this.color = color;
-//   this.brand = brand;
-//   this.price = price;
-// }
-
-// Car.prototype.start = function () {
-//   return "vrooom vroom";
-// };
-
-// Car.prototype.getCarInfos = function () {
-//   return `${this.brand} ${this.color} ${this.price}`;
-// };
-
-class Car {
-  constructor(infos) {
-    this.wheels = 4;
-    this.color = infos.color;
-    this.brand = infos.brand;
-    this.price = infos.price;
+class Alien {
+  // code the class logic between those 2 brackets
+  constructor(n, x = 0, y = 0) {
+    // in a class, the constructor function MUST be called constructor
+    this.name = n;
+    this.position = {
+      x: x,
+      y: y,
+    };
   }
 
-  start() {
-    return "vrooom vroom";
+  getName() {
+    return `I'm an alien and my name is ${this.name} \n`;
   }
 
-  getCarInfos() {
-    return `${this.brand} ${this.color} ${this.price}`;
+  teleport(x, y) {
+    // console.log("this is moving", this);
+    this.position.x = x;
+    this.position.y = y;
+  }
+
+  moveVertical(direction) {
+    if (direction === "up") this.position.y += 1;
+    else if (direction === "down") this.position.y -= 1;
+    else throw new Error("Invalid position argument");
   }
 }
 
-class BigCar extends Car {
-  constructor(infos) {
-    super(infos);
-  }
+const alien1 = new Alien("zorg-x1");
+const alien2 = new Alien("Hypno frog");
+// console.log("step 1 >>>", alien1);
+console.log(alien1.getName());
 
-  start() {
-    return "VROOOM VROOOM";
-  }
-}
+alien1.moveVertical("up");
+alien1.moveVertical("up");
+alien1.moveVertical("up");
 
-const peugeot205 = new Car({
-  price: 10000,
-  color: "red",
-  brand: "peugeot",
-});
+console.log("step 2 >>>", alien1);
+alien1.moveVertical("down");
 
-// console.log("------------");
-// console.log(peugeot205);
-// console.log(peugeot205.start());
-// console.log(peugeot205.getCarInfos());
+console.log("step 3 >>>", alien1);
 
-console.log("------------");
+console.log(alien2.getName());
 
-const audi = new BigCar({
-  price: 20000,
-  color: "blue",
-  brand: "audi",
-});
 
-console.log(audi.start());
-console.log(audi.getCarInfos());
+// alien1.teleport(20, 10);
+
+// console.log(alien1);
+
+// alien1.teleport(2000, 1000);
+
+// console.log(alien1);
+
+// const alien2 = new Alien("zoïdberg", 10, 20);
+// console.log(alien2);
+
+// console.log(alien2.getName());
+// console.log(alien1.move());
+// console.log(alien2.position.y);
