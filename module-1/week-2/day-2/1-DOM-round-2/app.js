@@ -8,6 +8,8 @@ function handleClick() {
     console.log(input.id);
     console.log(input.value);
     result.textContent = result.textContent + " " + input.value;
+    input.value = ""; // reset the input value
+    input.focus(); // will highlight the input again
 }
 
 // happy break :)

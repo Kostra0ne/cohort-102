@@ -28,7 +28,6 @@
     - onclick on a button, trigger calcSum and display the result in a #sum-result div
 
 
-- do you wanna paper time ?
 
 
 
