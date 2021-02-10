@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.user {
+  border: 1px solid;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#ironhackers {
+    padding: 10px;
+    background: cadetblue;
+}
+
+#ironhackers .user * {
+  pointer-events: none;
+}
+
+.is-active {
+  border: 2px solid darkgoldenrod;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module">
+        const usersWrapper = document.getElementById("users");
+        const descriptions = document.querySelectorAll(".user .description");
+        const firstUserTitle = document.querySelector("#users .user:first-of-type .title");
+        // console.log(usersWrapper);
+        // console.log(usersWrapper instanceof Element);
+        // console.log(usersWrapper.children);
+        // console.log(usersWrapper.children[0]);
+        
+        // [...usersWrapper.children].forEach(child => console.log(child));
+
+        // console.log("-----");
+        
+        // console.log(descriptions);
+        
+        
+        // descriptions.forEach(desc => {
+        //     console.log(desc.parentElement.parentElement);
+        // })
+        console.log("-----");
+        console.log(firstUserTitle);
+        console.log(firstUserTitle.nextElementSibling);
+        console.log(firstUserTitle.nextElementSibling.previousElementSibling);
+
+    </script>
+  </head>
+  <body>
+    <div id="users">
+      <div class="user">
+        <h2 class="title">Jim</h2>
+        <p class="description">I love GO and JS and SQL.</p>
+      </div>
+      <div class="user">
+        <h2 class="title">Jill</h2>
+        <p class="description">I love Rust and JS and Python.</p>
+      </div>
+      <div class="user">
+        <h2 class="title">Kill</h2>
+        <p class="description">I love Java and C#.</p>
+      </div>
+    </div>
+  </body>
+</html>
