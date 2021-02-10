@@ -18,9 +18,12 @@ Car.prototype.start = function () {
   return "vrooom vroom";
 };
 
-Car.prototype.getCarInfos = function () {
+
+function getInfos() {
   return `${this.brand} ${this.color} ${this.price}`;
-};
+}
+
+Car.prototype.getCarInfos = getInfos;
 
 // const undef = User();
 // console.log(undef);

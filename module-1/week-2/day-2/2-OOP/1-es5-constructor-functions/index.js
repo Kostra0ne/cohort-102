@@ -1,4 +1,16 @@
+function Alien() {
+  this.name = name;
+  this.position = {
+    x: 0,
+    y: 0,
+  };
+}
+
+Alien.prototype.move = function (x, y) {};
+
 function Foo() {}
+
+Foo.prototype.doSomething = function (params) {};
 
 function Bar() {}
 
@@ -83,11 +95,9 @@ function Ennemy(n) {
   this.lifePoints = 5;
 }
 
-
 const player1 = new Player("Yuka");
 const player2 = new Player("Gui");
 const enemyOne = new Ennemy("Skull");
-
 
 console.log(player1);
 

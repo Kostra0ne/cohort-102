@@ -20,7 +20,6 @@ class Admin extends User {
   constructor(name, weight, pet, al) {
     super(name, weight, pet);
     // with super() , we pass the desired the to the parent constructor
-    this.ableToViewAllAccounts = true;
     this.accessLevel = al;
   }
 
