@@ -23,11 +23,6 @@
         - display in a list
         - toggle is-active css class on each hacker card
 
-- if time : gang programming todo-list
-    - create a todo
-    - remove a todo
-    - self guided bonus: move a todo up/down
-
 
 - callbacks and timing
  - setTimeout
