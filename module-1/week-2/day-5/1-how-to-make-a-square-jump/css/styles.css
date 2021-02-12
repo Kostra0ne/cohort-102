@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+
+:root {
+  --enemy-height: 18px;
+  --enemy-width: 18px;
+  --color-dark: #101;
+  --color-light: whitesmoke;
+  /* --color-main: #101; */
+  --color-main: tomato;
+  /* --color-second: rgb(139, 218, 14); */
+  --color-second: #101;
+  --player-dot-size: 4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  height: 400px;
+  width: 400px;
+  font-family: "Roboto Mono", monospace;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2 /5;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+#board {
+  background: black;
+  z-index: 0;
+  animation: board-background 320s ease-in infinite;
+}
+
+@keyframes board-background {
+  0% {
+    background: transparent
+  }
+  20% {
+    background: #C0D3C5
+  }
+  40% {
+    background: #666
+  }
+  60% {
+    background: #6A6
+  }
+  80% {
+    background: #1A1A1A
+  }
+}
+
+#board,
+#menu {
+  grid-column: 1 / 6;
+  grid-row: 2 / 7;
+  position: relative;
+  box-shadow: 0px 1.1px 0.6px 0px #101;
+}
+
+#menu {
+  visibility: visible;
+  z-index: 1;
+  color: var(--color-light);
+  background: #040404bd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu .title {
+  margin-bottom: 20px;
+}
+
+#menu .btn {
+  display: flex;
+  width: 120px;
+  height: 32px;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  padding: 7px;
+  justify-content: space-evenly;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+#menu .btn:hover {
+  color: var(--color-light);
+  background: var(--color-dark);
+}
+
+#menu .title.is-hidden {
+  display: none;
+}
+
+#life-bar {
+  grid-column: 2 / 3;
+  grid-row: 7 / 8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: color 0.1s linear;
+}
+
+#life-bar.is-damaged {
+  color: firebrick;
+}
+
+#clock {
+  grid-column: 4 / 5;
+  grid-row: 7 / 8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#player {
+  position: absolute;
+  background: var(--color-main);
+  bottom: 0;
+  left: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, var(--player-dot-size));
+  grid-template-rows: repeat(12, var(--player-dot-size));
+  transition: border-radius 0.2s linear;
+  border-radius: 0;
+  grid-template-areas:
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  a  .  .  .  .  b  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  .";
+}
+
+#player::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 20px;
+  height: 20px;
+  background: var(--color-light);
+}
+
+#player.right.hurt {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  grid-template-areas:
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  a  .  .  .  b  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  c  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  .";
+}
+
+#player.left.hurt {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  grid-template-areas:
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  a  .  .  .  b  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  c  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  .";
+}
+
+#player.jump {
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4.5rem;
+  grid-template-areas:
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  a  .  .  .  .  .  b  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  .";
+}
+
+#player.dead {
+  grid-template-areas:
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  a  .  .  .  b  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  ."
+    ".  .  .  .  .  .  .  .  .  .  .  .";
+}
+
+#player .hear {
+  position: absolute;
+  top: -10px;
+  width: 13px;
+  background: inherit;
+  height: 20px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+#player .hear::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 5px;
+  background: var(--color-second);
+  height: 5px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+#player .hear.l {
+  left: 5px;
+}
+
+#player .hear.r {
+  right: 5px;
+}
+
+#player .dot {
+  background: var(--color-second);
+  width: var(--player-dot-size);
+  height: var(--player-dot-size);
+  display: none;
+  transition: all 5s ease-in;
+}
+
+#player #dot-a,
+#player #dot-b {
+  display: block;
+}
+
+#player.hurt .dot {
+  width: 90%;
+}
+
+#player.hurt #dot-a,
+#player.hurt #dot-b,
+#player.hurt #dot-c {
+  display: block;
+}
+
+#player.jump #dot-a,
+#player.jump #dot-b {
+  display: block;
+}
+
+#dot-a {
+  grid-area: a;
+}
+
+#dot-b {
+  grid-area: b;
+}
+
+#dot-c {
+  grid-area: c;
+}
+
+#dot-d {
+  grid-area: d;
+}
+
+#dot-e {
+  grid-area: e;
+}
+
+#dot-f {
+  grid-area: f;
+}
+
+#dot-g {
+  grid-area: g;
+}
+
+#dot-h {
+  grid-area: h;
+}
+
+#dot-i {
+  grid-area: i;
+}
+
+#dot-j {
+  grid-area: j;
+}
+
+/* https://animista.net/play/basic/flip-2  */
+
+@keyframes move-enemy {
+  0% {
+    transform: translateX(0px) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateX(-380px) rotate(360deg);
+  }
+}
+
+.obstacle {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  bottom: 0;
+  /* transform-origin: 0 0 0; */
+  right: 0;
+  animation: move-enemy 3s infinite alternate;
+}
+
+.obstacle.default {
+  background: var(--color-dark);
+}

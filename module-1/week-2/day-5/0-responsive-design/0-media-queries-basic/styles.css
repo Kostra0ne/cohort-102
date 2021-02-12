@@ -1,0 +1,21 @@
+
+
+body {
+    background: dodgerblue;   
+}
+
+/* 
+    320px  : really small phone
+    540px  : average 2021 phones
+    640px  : large phone
+    768px  : small tablets
+    990px  : tablets
+    1280px : desktop
+    and counting ...
+*/
+
+@media (min-width: 320px) and (max-width: 540px) {
+    body {
+        background: firebrick;
+    }
+}
