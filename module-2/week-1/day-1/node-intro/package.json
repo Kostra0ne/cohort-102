@@ -1,0 +1,20 @@
+{
+  "name": "intro-node",
+  "version": "1.0.0",
+  "description": "a simple node program",
+  "main": "index.js",
+  "scripts": {
+    "test": "foo"
+  },
+  "keywords": [
+    "foo",
+    "bar",
+    "baz"
+  ],
+  "author": "gui@gui.gui",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1"
+  }
+}
