@@ -19,11 +19,11 @@ export function checkCollision(damageCallback) {
     const matchY = shapeRect.y >= playerRect.y && shapeRect.y <= playerRect.y1;
     
     // console.log(shapeRect.x, playerRect.x);
-    // console.log(matchX && matchY);
+    console.log(matchX && matchY);
 
     if (matchX && matchY) {
       // console.log(shapes[i].damage);
-      damageCallback(shapes[i].damage);
+      // damageCallback(shapes[i].damage);
     }
   }
 }
@@ -70,7 +70,7 @@ function handleKeyPress(evt) {
 
 // event listeners
 export function listen() {
-  window.addEventListener("keypress", handleKeyPress);
+  window.addEventListener("keydown", handleKeyPress);
   window.addEventListener("keyup", handleKeyUp);
 }
 

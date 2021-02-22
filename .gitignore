@@ -4,6 +4,7 @@ tests/
 _random/
 _random-team/
 
+node_modules/
 
 module-3/
 
