@@ -19,7 +19,7 @@ app.get("/", (request, response) => {
     css: ["home", "gallery"],
     js: ["gallery"],
     cohort: {
-      number: 205,
+      number: 102,
       students: 34,
       loveJS: true,
       favoriteBar: false,
