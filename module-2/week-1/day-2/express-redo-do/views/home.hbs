@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+
+<p>
+    The current cohort at ironhack Paris is dev-squad {{cohort.number}} !<br>
+    They are {{cohort.students}} learners
+    {{#if cohort.loveJS}}
+    <b>who are JS fans</b> !
+    {{else}}
+    <b>who hate JS soooo much :D</b>
+    {{/if}}
+</p>
+
+{{#unless cohort.favoriteBar}}
+<p>the cohort doesn't have a favorite bar yet ...</p>
+{{else}}
+<p>the cohort goes to le {{cohort.favoriteBar}} every friday</p>
+{{/unless}}
+
+
+{{> myButton "click me homie :)"}}
+{{> myButton "access your dashboard"}}
+
+{{!-- in hbs you call a partial with this {{> partialName}} --}}
+{{> galleryImg "gallery-1"}}
+
+{{> galleryImg "gallery-2"}}

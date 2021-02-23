@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+
+<ul class="list">
+    {{#each hackerNames}}
+    <li class="item">{{this}}</li>
+    {{/each}}
+</ul>
+
+<ul class="list">
+    {{#each hacker}}
+    <li class="item">{{@key}} : {{this}}</li>
+    {{/each}}
+</ul>

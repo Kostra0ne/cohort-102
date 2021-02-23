@@ -1,0 +1,39 @@
+.gallery {
+  height: 400px;
+  width: 600px;
+  border: 1px solid;
+  position: relative;
+  margin: 20px 0;
+}
+
+.gallery .btn.prev {
+  left: 10px;
+}
+
+.gallery .btn.next {
+  right: 10px;
+}
+
+.gallery .btn {
+  height: 40px;
+  width: 40px;
+  background: transparent;
+  color: tomato;
+  border: 1px solid;
+  border-color: tomato;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  position: absolute;
+  top: calc((100% - 40px) / 2);
+  outline: none;
+}
+
+.gallery .btn:focus-visible {
+  outline: slateblue;
+}
+
+.gallery .btn:hover {
+  background: tomato;
+  color: white;
+  border-color: transparent;
+}
