@@ -1,0 +1,9 @@
+<h1 class="title">My Squad</h1>
+{{#each users}}
+<div class="user">
+    {{this.name}} - {{this.email}} - {{this.favLang}}<br>
+    <a href="/delete-ironhacker/{{this._id}}" >
+        delete this user
+    </a>
+</div>
+{{/each}}
