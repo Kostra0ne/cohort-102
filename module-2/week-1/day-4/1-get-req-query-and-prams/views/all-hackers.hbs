@@ -1,0 +1,10 @@
+<h1>all hackers</h1>
+<ul>
+    {{#each list}}
+    <li class="{{#if this.isRegistered}}is-registered{{/if}}">
+        <h2>{{this.name}}</h2>
+        <a href="/hackers/{{this._id}}">see details</a>
+    </li>
+    {{/each}}
+</ul>
+
