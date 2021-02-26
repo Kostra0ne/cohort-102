@@ -16,6 +16,4 @@ const HackerModel = mongoose.model("hackers", hackerModel);
 // // just above : the first argument is the collection name id db
 // // the seconde arg is the scheam / plan / shape of upcoming documents
 
-
-
 module.exports = HackerModel;

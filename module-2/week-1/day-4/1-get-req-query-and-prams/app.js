@@ -13,13 +13,16 @@ const hackerRouter = require("./routes/hacker");
 
 const app = express();
 
+app.locals.welcomeMessage = "welcome to our cool application !!!";
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json()); // setup to access posted information via AJAX ...
+app.use(express.urlencoded({ extended: false })); 
+// setup to access posted information via the clasic form method ...
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
