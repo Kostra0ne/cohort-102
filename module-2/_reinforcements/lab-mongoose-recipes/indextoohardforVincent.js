@@ -19,7 +19,7 @@ const myRecipe = {
 };
 
 // Connection to the database "recipe-app"
-mongoose
+await mongoose
     .connect(MONGODB_URI, {
         useCreateIndex: true,
         useNewUrlParser: true,
@@ -38,7 +38,7 @@ mongoose
                 Recipe.insertMany(data)
                     .then((dbres) => {
                         console.log("creation succeded: ", dbres);
-                        Recipe.updateOne(blahcla).then();
+                        //Recipe.updateOne().then();
                     })
                     .catch();
             })
