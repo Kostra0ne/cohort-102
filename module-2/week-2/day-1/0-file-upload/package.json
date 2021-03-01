@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www -e .js,.hbs",
-    "seed": "node ./bin/seed/hackers.js"
+    "seed:hacker": "node ./bin/seed/hackers.js",
+    "seed:heroe": "node ./bin/seed/heroes.js"
   },
   "dependencies": {
     "cloudinary": "^1.25.0",
