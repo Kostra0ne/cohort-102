@@ -2,7 +2,7 @@ require("dotenv").config();
 require("./../../config/mongodb");
 
 const HeroeModel = require("./../../model/Heroe")
-const heroes = require("./heroes.json");
+const heroes = require("./data/heroes.json");
 
 console.log(heroes);
 
