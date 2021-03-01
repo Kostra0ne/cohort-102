@@ -1,0 +1,14 @@
+<main class="page">
+
+  <div class="movies">
+    {{#each movies}}
+    <article class="movie">
+      <img src="{{this.image}}" alt="{{this.title}}">
+      <p>{{this.title}}</p>
+      <a href="/movies/{{this._id}}">
+        <p>See more</p>
+      </a>
+    </article>
+    {{/each}}
+  </div>
+</main>

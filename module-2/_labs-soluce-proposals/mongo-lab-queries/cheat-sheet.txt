@@ -1,0 +1,19 @@
+
+------------------------------
+Comparison Queries Cheat Sheet
+------------------------------
+$eq	 | fetches values that are equal to specified value	                { field : { $eq: value } }
+$ne	 | fetches all values that are not equal to specified value         { field : { $ne: value } }
+$gt	 | fetches values that are greater than specified value	            { field : { $gt: value } }
+$gte | fetches values that are greater than or equal to specified value	{ field : { $gte: value } }
+$lt	 | fetches values that are less than specified value	            { field : { $lt: value } }
+$lte | fetches values that are less than or equal to specified value	{ field : { $lte: value } }
+
+------------------------------
+Array Query Operators
+------------------------------
+
+$in          Matches any of the values specified in an array. { field: { $in: [ value1, value2, ..... , valueN ] } }
+$nin         Matches none of the values specified in an array { field: { $nin: [ value1, value2, ..... , valueN ] } }
+$all         Matches arrays that contain all elements specified in the query. { field: { $all: [ value1, value2, ..... , valueN ] } }
+$elemMatch   Selects documents if element in the array field matches all the specified $elemMatch conditions. { field: { $elemMatch: { <query1>, <query2>, ... } } }
