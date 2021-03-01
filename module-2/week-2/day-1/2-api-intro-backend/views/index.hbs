@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+
+<p>Welcome to {{title}}</p>
+
+{{#if joke}}
+<p>{{joke.value}}</p>
+{{/if}}
+
+{{!-- 
+in hbs, you need to use the "this" keyword : 
+
+#each 
+OR
+> partials
+OR 
+custom helpers
+
+ --}}
