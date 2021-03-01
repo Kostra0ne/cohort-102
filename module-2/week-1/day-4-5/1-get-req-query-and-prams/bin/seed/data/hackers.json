@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Andy",
+    "email": "andy@foo.com",
+    "favLangage": "JS",
+    "isRegistered": true
+  },
+  {
+    "name": "Nina",
+    "email": "nina@gird.dev",
+    "favLangage": "CSS",
+    "isRegistered": true
+  },
+  {
+    "name": "Fanny",
+    "email": "fanny@map.com",
+    "favLangage": "JS",
+    "isRegistered": true
+  },
+  {
+    "name": "Vincent",
+    "email": "vinz@bots.io",
+    "favLangage": "Python",
+    "isRegistered": true
+  }
+]
