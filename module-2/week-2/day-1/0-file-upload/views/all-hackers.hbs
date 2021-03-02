@@ -1,9 +1,18 @@
 <h1>all hackers</h1>
-<p>{{welcomeMessage}}</p>
-<ul>
+
+{{#unless hackers.length}}
+<p>
+    no hacker yet
+</p>
+{{else}}
+<ul class="list">
     {{#each hackers}}
-    <li class="{{#if this.isRegistered}}is-registered{{/if}}">
+    <li class="hacker item {{#if this.isRegistered}}is-registered{{/if}}">
         <h2>{{this.name}}</h2>
+        <p>
+            1/ display favLangage here<br>
+            1/ display cohort name here !
+        </p>
         <p>
             <a href="/hackers/{{this._id}}">see details</a><br>
             <a href="/hackers/edit/{{this._id}}">update</a><br>
@@ -12,3 +21,4 @@
     </li>
     {{/each}}
 </ul>
+{{/unless }}

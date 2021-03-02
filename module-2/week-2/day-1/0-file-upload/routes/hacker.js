@@ -20,6 +20,60 @@ router.get("/", (req, res, next) => {
     });
 });
 
+// just below, i'm using a regex to be ultra cautious about what :id should look like !!!
+// a mongo id is a random sequence of lower case letters and numbers, it's length is always
+router.get("/:id([a-z0-9]{24})", (req, res, next) => {
+  // console.log(req.params); // an object representing all dynamic path segments
+  console.log(req.params.id); // :id is now a variable accessible through req.params.id
+
+  HackerModel.findById(req.params.id)
+    .then((hacker) => {
+      console.log(hacker);
+      res.render("one-hacker", { hacker });
+    })
+    .catch((dbError) => {
+      next(dbError);
+    });
+});
+
+router.get("/add-another", (req, res, next) => {
+  res.render("create-hacker");
+});
+
+router.get("/edit/:id([a-z0-9]{24})", (req, res, next) => {
+  HackerModel.findById(req.params.id)
+    .then((hacker) => res.render("edit-hacker", { hacker }))
+    .catch(next);
+});
+
+router.get("/delete/:id", async (req, res, next) => {
+  try {
+    await HackerModel.findByIdAndDelete(req.params.id);
+    res.redirect("/hackers");
+  } catch (err) {
+    next(err); // a way to pass the error to the next middleware
+    // so far, it's a convenient way for you to handle/display errors directly in the page
+  }
+});
+
+//another way to write the route just above
+
+// router.get("/delete/:id", (req, res, next) => {
+//   HackerModel.findByIdAndDelete(req.params.id)
+//     .then(() => res.redirect("/hackers"))
+//     .catch(next);
+// });
+
+router.get("/as-json", async (req, res, next) => {
+  // let's use the async/await syntax
+  try {
+    const hackers = await HackerModel.find();
+    res.json(hackers);
+  } catch (dbError) {
+    next(dbError); // will display the error in
+  }
+});
+
 // a route for a unique id ... not super D.R.Y
 // router.get("/6037a1cf62fe09be72e54b21", (req, res, next) => {
 //   res.send("ok so far ...");
@@ -57,37 +111,10 @@ router.post("/create", uploader.single("avatar"), async (req, res, next) => {
       avatar,
       isRegistered: isRegistered === "on",
     });
-    res.redirect("/hackers/add-another");
+    res.redirect("/hackers");
   } catch (err) {
     next(err);
   }
-  // res.send("work in progress...");
-});
-
-// just below, i'm using a regex to be ultra cautious about what :id should look like !!!
-// a mongo id is a random sequence of lower case letters and numbers, it's length is always
-router.get("/:id([a-z0-9]{24})", (req, res, next) => {
-  // console.log(req.params); // an object representing all dynamic path segments
-  console.log(req.params.id); // :id is now a variable accessible through req.params.id
-
-  HackerModel.findById(req.params.id)
-    .then((hacker) => {
-      console.log(hacker);
-      res.render("one-hacker", { hacker });
-    })
-    .catch((dbError) => {
-      next(dbError);
-    });
-});
-
-router.get("/add-another", (req, res, next) => {
-  res.render("create-hacker");
-});
-
-router.get("/edit/:id([a-z0-9]{24})", (req, res, next) => {
-  HackerModel.findById(req.params.id)
-    .then((hacker) => res.render("edit-hacker", { hacker }))
-    .catch(next);
 });
 
 router.post("/edit/:id", async (req, res, next) => {
@@ -102,35 +129,6 @@ router.post("/edit/:id", async (req, res, next) => {
     res.redirect("/hackers");
   } catch (err) {
     next(err);
-  }
-  // res.send("work in progress...");
-});
-
-router.get("/delete/:id", async (req, res, next) => {
-  try {
-    await HackerModel.findByIdAndDelete(req.params.id);
-    res.redirect("/hackers");
-  } catch (err) {
-    next(err); // a way to pass the error to the next middleware
-    // so far, it's a convenient way for you to handle/display errors directly in the page
-  }
-});
-
-//another way to write the route just above
-
-// router.get("/delete/:id", (req, res, next) => {
-//   HackerModel.findByIdAndDelete(req.params.id)
-//     .then(() => res.redirect("/hackers"))
-//     .catch(next);
-// });
-
-router.get("/as-json", async (req, res, next) => {
-  // let's use the async/await syntax
-  try {
-    const hackers = await HackerModel.find();
-    res.json(hackers);
-  } catch (dbError) {
-    next(dbError); // will display the error in
   }
 });
 

@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <nav>
-      <a href="/">home</a>
-      <a href="/hackers">all hackers</a>
-      <a href="/hackers/add-another">+ 1 hacker !</a>
-    </nav>
-    {{{body}}}
-  </body>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <nav>
+    <a href="/">home</a>
+    <span>|</span>
+    <a href="/hackers">all hackers</a>
+    <span>|</span>
+    <a href="/hackers/add-another">+ 1 hacker</a>
+    <span>|</span>
+    <a href="/cohorts">all cohorts</a>
+    <span>|</span>
+    <a href="/cohorts/add-another">+ 1 cohort</a>
+  </nav>
+  {{{body}}}
+</body>
+
 </html>

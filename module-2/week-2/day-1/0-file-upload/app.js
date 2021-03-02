@@ -10,6 +10,7 @@ const hbs = require("hbs");
 
 const indexRouter = require("./routes/index");
 const hackerRouter = require("./routes/hacker");
+const cohortRouter = require("./routes/cohort");
 
 const app = express();
 
@@ -30,6 +31,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 app.use("/", indexRouter);
 app.use("/hackers", hackerRouter);
+app.use("/cohorts", cohortRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
