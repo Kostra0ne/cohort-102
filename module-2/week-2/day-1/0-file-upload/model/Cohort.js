@@ -13,7 +13,7 @@ const cohortSchema = new Schema({
       "paris",
       "berlin",
       "amsterdam",
-      "saol paulo",
+      "sao paulo",
       "mexico",
       "madrid",
       "barcelona",
