@@ -19,6 +19,12 @@ router.get("/", (req, res, next) => {
     });
 });
 
+router.get("/", (req, res, next) => {
+  HackerModel.find()
+    .then((dbRes) => res.json({data: dbRes}))
+    .catch((dbError) => next(dbError));
+});
+
 // a route for a unique id ... not super D.R.Y
 // router.get("/6037a1cf62fe09be72e54b21", (req, res, next) => {
 //   res.send("ok so far ...");
