@@ -3,16 +3,36 @@ var router = express.Router();
 const UserModel = require("./../model/User");
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
-  console.log(req.query); // query string object
-  // const exp = new RegExp(req.query.name); // creating a regular expression
-  // const dbRes = await User.find({ name: { $regex: exp } });
-  res.json("todo fetch user from db");
+router.get("/", async (req, res, next) => {
+  // todo create a search route
+  let query = {};
+
+  if (req.query.name) {
+    const exp = new RegExp(req.query.name); // creating a regular expression
+    query.name = { $regex: exp };
+  }
+
+  try {
+    res.status(200).json(await UserModel.find(query));
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 router.post("/", async (req, res, next) => {
   try {
-    res.json(await UserModel.create(req.body));
+    res.status(201).json(await UserModel.create(req.body));
+  } catch (dbError) {
+    res.json({
+      error: dbError,
+      level: "error",
+    });
+  }
+});
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    res.status(202).json(await UserModel.findOne({ _id: req.params.id }));
   } catch (dbError) {
     res.json({
       error: dbError,

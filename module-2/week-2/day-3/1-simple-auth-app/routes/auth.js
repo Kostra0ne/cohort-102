@@ -7,6 +7,18 @@ router.get("/signin", (req, res, next) => {
   res.render("auth/signin");
 });
 
+router.get("/signup", async (req, res, next) => {
+  res.render("auth/signup");
+});
+
+router.get("/signout", async (req, res, next) => {
+  req.session.destroy(function (err) {
+    // cannot access session here anymore
+    // console.log(req.session.currentUser);
+    res.redirect("/auth/signin");
+  });
+});
+
 router.post("/signin", async (req, res, next) => {
   // DO something
   //   res.render("auth/signin.hbs");
@@ -45,13 +57,9 @@ router.post("/signin", async (req, res, next) => {
   }
 });
 
-router.get("/signup", async (req, res, next) => {
-  res.render("auth/signup");
-});
-
 router.post("/signup", async (req, res, next) => {
   try {
-    const newUser = { ...req.body };
+    const newUser = { ...req.body }; // clone req.body with spread operator
     const foundUser = await User.findOne({ email: newUser.email });
 
     if (foundUser) {
@@ -59,6 +67,7 @@ router.post("/signup", async (req, res, next) => {
       res.redirect("/auth/signup");
     } else {
       const hashedPassword = bcrypt.hashSync(newUser.password, 10);
+      // console.log(newUser.password, hashedPassword);
       newUser.password = hashedPassword;
       await User.create(newUser);
       req.flash("success", "Congrats ! You are now registered !");
@@ -72,14 +81,6 @@ router.post("/signup", async (req, res, next) => {
     req.flash("error", errorMessage);
     res.redirect("/auth/signup");
   }
-});
-
-router.get("/signout", async (req, res, next) => {
-  req.session.destroy(function (err) {
-    // cannot access session here anymore
-    // console.log(req.session.currentUser);
-    res.redirect("/auth/signin");
-  });
 });
 
 module.exports = router;

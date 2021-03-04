@@ -9,12 +9,12 @@ const flash = require("connect-flash");
 const hbs = require("hbs");
 const session = require("express-session");
 
+
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 
 const app = express();
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -47,6 +47,19 @@ app.use(function myCookieLogger(req, res, next) {
   console.log(req.cookies);
   next();
 })
+
+const devMode = false
+
+// if (devMode === true)
+// app.use(function createFakeLoggedInUser(req, res, next) {
+//   res.locals.currentUser = {
+//     _id: "ksdnsx73dksk",
+//     name: "foo",
+//     email: "bar@bar.bar"
+//   }
+//   next();
+// })
+
 
 app.use(require("./middlewares/exposeFlashMessage"));
 app.use(require("./middlewares/exposeLoginStatus"));

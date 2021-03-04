@@ -11,5 +11,10 @@
 </div>
 
 <ul id="users-list">
-
+    {{#each users}}
+    <li class="item user {{#if isAdmin}}is-admin{{/if}}">
+        <span>{{name}}</span>
+        <button data-user-id="{{_id}}">delete</button>
+    </li>
+    {{/each}}
 </ul>
