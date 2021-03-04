@@ -32,7 +32,7 @@ router.post("/", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    res.status(202).json(await UserModel.findOne({ _id: req.params.id }));
+    res.status(202).json(await UserModel.findOneAndDelete({ _id: req.params.id }));
   } catch (dbError) {
     res.json({
       error: dbError,

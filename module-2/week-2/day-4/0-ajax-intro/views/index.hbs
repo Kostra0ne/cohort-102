@@ -14,7 +14,8 @@
     {{#each users}}
     <li class="item user {{#if isAdmin}}is-admin{{/if}}">
         <span>{{name}}</span>
-        <button data-user-id="{{_id}}">delete</button>
+        <button class="btn delete" data-user-id="{{_id}}">delete</button>
+        <button class="btn edit" data-user-id="{{_id}}">edit</button>
     </li>
     {{/each}}
 </ul>
