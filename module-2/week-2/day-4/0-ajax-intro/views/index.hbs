@@ -1,6 +1,8 @@
-<h1>{{title}}</h1>
-
+<h1>Search users</h1>
 <input id="search_input" type="text" class="input">
+<ul id="search-results"></ul>
+
+<hr>
 
 <div id="my-fake-form">
     <h1>create new user</h1>
@@ -9,6 +11,8 @@
     <input type="checkbox" id="checkbox-is-admin">
     <button id="btn-new-user">create</button>
 </div>
+
+<hr>
 
 <ul id="users-list">
     {{#each users}}

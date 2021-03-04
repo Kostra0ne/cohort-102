@@ -2,18 +2,23 @@ const inputSearch = document.getElementById("search_input");
 const inputUsername = document.getElementById("new-username");
 const checkboxIsAdmin = document.getElementById("checkbox-is-admin");
 const btnCreate = document.getElementById("btn-new-user");
-const userList = document.getElementById("users-list");
-const btnsDelete = userList.querySelectorAll(".btn.delete");
-const btnsEdit = userList.querySelectorAll(".btn.edit");
+const listUser = document.getElementById("users-list");
+const listSearch = document.getElementById("search-results");
+const btnsDelete = listUser.querySelectorAll(".btn.delete");
+const btnsEdit = listUser.querySelectorAll(".btn.edit");
 
 // DOM LOGIC
+
+function resetSearchResult() {
+  listSearch.innerHTML = "";
+}
 
 function resetCreateInput() {
   inputUsername.value = "";
   inputUsername.focus();
 }
 
-function insertNewUser(user) {
+function insertNewUserInHTML(user) {
   const { name, isAdmin, _id } = user;
   const li = document.createElement("li");
   li.className = "user item" + (isAdmin === true ? " is-admin" : "");
@@ -22,13 +27,24 @@ function insertNewUser(user) {
         <button data-user-id="${_id}" class="btn delete">delete</button>
         <button data-user-id="${_id}" class="btn edit">edit</button>
     `;
-  userList.appendChild(li);
+  listUser.appendChild(li);
   listenClick(li.querySelector(".btn.edit"), handleUpdate);
   listenClick(li.querySelector(".btn.delete"), handleDelete);
 }
 
 function removeUserFromHTML(li) {
   li.remove();
+}
+
+function displaySearchResult(users) {
+  listSearch.innerHTML = "";
+  if (users.length) {
+    users.forEach((user) => {
+      listSearch.innerHTML += `<li>${user.name}</li>`;
+    });
+  } else {
+    listSearch.innerHTML = `<li>sorry, no match found</li>`;
+  }
 }
 
 // AJAX HANDLERS (CRUD)
@@ -43,8 +59,6 @@ function readUsers(string) {
   let query = string ? `?name=${string}` : "";
   return axios.get(`/api/users${query}`);
 }
-
-readUsers(); // call the get users without a 
 
 // UPDATE
 function updateUser(evt) {
@@ -65,17 +79,18 @@ function handleCreate(evt) {
     name: inputUsername.value,
     isAdmin: checkboxIsAdmin.checked,
   })
-  .then((response) => insertNewUser(response.data))
-  .catch(function (error) {
-    console.log(error);
-  });
+    .then((response) => {
+      insertNewUserInHTML(response.data);
+      resetCreateInput();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
-function handleRead(evt) {
+function handleRead(evt, callback) {
   readUsers(evt.target.value)
-    .then((users) => {
-      console.log(users.data);
-    })
+    .then((apiRes) => callback(apiRes.data))
     .catch((apiError) => console.log(apiError));
 }
 
@@ -97,10 +112,15 @@ function listenClick(element, callback) {
 
 // DOM EVENT LISTENERS
 
-inputSearch.onkeyup = handleRead;
+inputSearch.onkeyup = (evt) => {
+  if (evt.target.value.length === 0) return resetSearchResult();
+  handleRead(evt, displaySearchResult);
+};
 
 btnCreate.onclick = handleCreate;
 
 btnsDelete.forEach((btn) => listenClick(btn, handleDelete));
 
 btnsEdit.forEach((btn) => listenClick(btn, handleUpdate));
+
+// readUsers(); // call  all get the users (since no string is passed as arg)
