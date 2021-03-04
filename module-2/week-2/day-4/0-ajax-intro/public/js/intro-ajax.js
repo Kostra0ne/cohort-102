@@ -113,8 +113,8 @@ function listenClick(element, callback) {
 // DOM EVENT LISTENERS
 
 inputSearch.onkeyup = (evt) => {
-  if (evt.target.value.length === 0) return resetSearchResult();
-  handleRead(evt, displaySearchResult);
+  if (evt.target.value.length === 0) resetSearchResult();
+  else handleRead(evt, displaySearchResult);
 };
 
 btnCreate.onclick = handleCreate;
