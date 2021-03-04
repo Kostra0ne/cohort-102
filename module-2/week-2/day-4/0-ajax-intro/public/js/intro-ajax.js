@@ -47,6 +47,19 @@ function displaySearchResult(users) {
   }
 }
 
+function setUpdateButton(btn) {
+  btn.classList.toggle("is-save-mode");
+  const isSaveMode = btn.classList.contains("is-save-mode");
+  btn.textContent =  isSaveMode ?  "save" : "edit"
+  return isSaveMode;
+}
+
+function toggleEditableSpan(element, event, status) {
+  element.classList.toggle("is-active");
+  element[event]();
+  element.setAttribute("contenteditable", status);
+}
+
 // AJAX HANDLERS (CRUD)
 
 // CREATE
@@ -61,8 +74,8 @@ function readUsers(string) {
 }
 
 // UPDATE
-function updateUser(evt) {
-  console.log("todo edit");
+function updateUser(id, name) {
+  return axios.patch(`/api/users/${id}`, { name });
 }
 
 // DELETE
@@ -72,9 +85,7 @@ function deleteUser(id) {
 
 // DOM EVENTS HANDLERS
 
-function handleCreate(evt) {
-  // evt.preventDefault();
-
+function handleCreate() {
   createUser({
     name: inputUsername.value,
     isAdmin: checkboxIsAdmin.checked,
@@ -95,7 +106,16 @@ function handleRead(evt, callback) {
 }
 
 function handleUpdate(evt) {
-  console.log("todo handle update");
+  const id = evt.target.getAttribute("data-user-id");
+  const span = evt.target.closest(".item").querySelector("span");
+  const isSaveMode = setUpdateButton(evt.target);
+  toggleEditableSpan(span, isSaveMode ? "blur" : "focus", isSaveMode);
+
+  if (!isSaveMode) {
+    updateUser(id, span.textContent)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.error(err));
+  }
 }
 
 function handleDelete(evt) {

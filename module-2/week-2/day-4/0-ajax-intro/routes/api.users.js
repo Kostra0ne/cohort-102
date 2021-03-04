@@ -6,7 +6,8 @@ const UserModel = require("./../model/User");
 router.get("/", async (req, res, next) => {
   let query = {}; // empty object will wind every users
 
-  if (req.query.name) { // if we send a query string with the get request (?name=whatever)
+  if (req.query.name) {
+    // if we send a query string with the get request (?name=whatever)
     const exp = new RegExp(req.query.name); // creating a regular expression
     query.name = { $regex: exp }; // create an object literal that will macth mongo query's expectations
   }
@@ -29,9 +30,24 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+router.patch("/:id", async (req, res, next) => {
+  try {
+    res
+      .status(201)
+      .json(await UserModel.findByIdAndUpdate(req.params.id, req.body));
+  } catch (dbError) {
+    res.json({
+      error: dbError,
+      level: "error",
+    });
+  }
+});
+
 router.delete("/:id", async (req, res, next) => {
   try {
-    res.status(202).json(await UserModel.findOneAndDelete({ _id: req.params.id }));
+    res
+      .status(202)
+      .json(await UserModel.findOneAndDelete({ _id: req.params.id }));
   } catch (dbError) {
     res.json({
       error: dbError,

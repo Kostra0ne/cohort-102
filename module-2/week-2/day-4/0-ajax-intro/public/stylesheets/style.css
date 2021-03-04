@@ -1,8 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+input {
+  padding: 5px;
+}
+
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+#users-list {
+  width: 100%;
+  max-width: 280px;
+  padding: 0;
+}
+
+#users-list .user.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid;
+  padding-bottom: 8px;
+}
+
+#users-list .user.item span {
+  width: 100px;
+  text-overflow: ellipsis;
+}
+
+#users-list .user.item .btn {
+  width: 60px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  outline: none;
+}
+
+#users-list .user.item .btn.is-save-mode {
+  background: darkseagreen;
+  color: white;
+}
+
+#users-list .user.item span.is-active {
+  outline: 2px solid dodgerblue;
+  border-radius: 0.3rem;
+  padding: 3px;
 }
