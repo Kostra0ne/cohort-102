@@ -39,7 +39,7 @@ function App() {
     myArray.push(`Hello n°${i}`);
   }
 
-  // After the return you cannot include any statements (if..., for..., switch...) 
+  // After the return you cannot include any statements (if..., for..., switch...)
   return (
     <div id="Foo" className="App">
       <h1>{displayName(myFriend)}</h1>
@@ -98,6 +98,11 @@ function App() {
         <p style={myBoxTextStyling}>Beautiful box</p>
       </div>
 
+      {/* Including an external Component
+          https://www.npmjs.com/package/react-youtube
+          type in your project directory:
+          npm install react-youtube
+      */}
       <YouTube videoId="N3AkSS5hXMA" />
 
       <h2>React Fragment</h2>
