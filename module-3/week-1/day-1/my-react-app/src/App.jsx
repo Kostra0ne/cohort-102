@@ -39,7 +39,7 @@ function App() {
     myArray.push(`Hello n°${i}`);
   }
 
-  // After the return you cannot include any statements
+  // After the return you cannot include any statements (if..., for..., switch...) 
   return (
     <div id="Foo" className="App">
       <h1>{displayName(myFriend)}</h1>
