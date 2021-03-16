@@ -58,14 +58,15 @@ class Counter extends Component {
 
   render() {
     // console.log(this.state.counter);
+    // console.log("Wohoooooooo");
+    // // this.setState({}); // Do not do this setState will call render and so on... infinit loop !
+    // let message;
 
-    let message;
-
-    if (this.state.counter > 10) {
-      message = <div>{this.props.positiveMessage}</div>;
-    } else {
-      message = <div>{this.props.negativeMessage}</div>;
-    }
+    // if (this.state.counter > 10) {
+    //   message = <div>{this.props.positiveMessage}</div>;
+    // } else {
+    //   message = <div>{this.props.negativeMessage}</div>;
+    // }
 
     return (
       <div>
@@ -73,9 +74,12 @@ class Counter extends Component {
           {this.props.person} has {this.state.counter} likes
         </h1>
 
+        {/* Guard operator */}
+        {this.state.counter > 10 && <div>{this.props.positiveMessage}</div>}
+        {this.state.counter <= 10 && <div>{this.props.negativeMessage}</div>}
         {/* <h3>{this.state.counter > 10 ? <div>Yay</div> : <div>Naaay</div>} </h3> */}
 
-        <h3>{message}</h3>
+        {/* <h3>{message}</h3> */}
 
         <button onClick={this.handleIncrement}>Increment</button>
         <button onClick={this.handleDecrement}>Decrement</button>
