@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Claire",
+    "avatar": "https://randomuser.me/api/portraits/women/75.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Bouba",
+    "avatar": "https://randomuser.me/api/portraits/men/75.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Maud",
+    "avatar": "https://randomuser.me/api/portraits/women/30.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Paul",
+    "avatar": "https://randomuser.me/api/portraits/men/30.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Pauline",
+    "avatar": "https://randomuser.me/api/portraits/women/41.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Mathieu C",
+    "avatar": "https://randomuser.me/api/portraits/men/10.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Mathieu J",
+    "avatar": "https://randomuser.me/api/portraits/men/10.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Mathieu L",
+    "avatar": "https://randomuser.me/api/portraits/men/10.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Julie",
+    "avatar": "https://randomuser.me/api/portraits/women/9.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Benjamin",
+    "avatar": "https://randomuser.me/api/portraits/men/56.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Augistin",
+    "avatar": "https://randomuser.me/api/portraits/men/72.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Romain",
+    "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Magali",
+    "avatar": "https://randomuser.me/api/portraits/women/45.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Antoine",
+    "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Adrien",
+    "avatar": "https://randomuser.me/api/portraits/men/6.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Thais",
+    "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Rowan",
+    "avatar": "https://randomuser.me/api/portraits/men/23.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Florian",
+    "avatar": "https://randomuser.me/api/portraits/men/14.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Myriam",
+    "avatar": "https://randomuser.me/api/portraits/women/27.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Mohammed",
+    "avatar": "https://randomuser.me/api/portraits/men/8.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Juan",
+    "avatar": "https://randomuser.me/api/portraits/men/69.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Anna",
+    "avatar": "https://randomuser.me/api/portraits/women/62.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Yassine",
+    "avatar": "https://randomuser.me/api/portraits/men/56.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Fatou",
+    "avatar": "https://randomuser.me/api/portraits/women/74.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Yuka",
+    "avatar": "https://randomuser.me/api/portraits/women/52.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Mélusine",
+    "avatar": "https://randomuser.me/api/portraits/women/49.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Amalia",
+    "avatar": "https://randomuser.me/api/portraits/women/47.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Mackenzie",
+    "avatar": "https://randomuser.me/api/portraits/women/38.jpg",
+    "lovesReact": false
+  },
+  {
+    "name": "Victoria",
+    "avatar": "https://randomuser.me/api/portraits/women/39.jpg",
+    "lovesReact": true
+  },
+  {
+    "name": "Alexis",
+    "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+    "lovesReact": false
+  }
+]

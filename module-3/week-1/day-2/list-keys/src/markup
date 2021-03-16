@@ -1,0 +1,17 @@
+ {studentsJSON.map((student) => (
+          <div key={student.name} className="Student-card">
+            <div className="Student-card__avatar-container">
+              <img
+                alt=""
+                className="Student-card__avatar"
+                src={student.avatar}
+              />
+            </div>
+            <div className="Student-card__info">
+              <h5 className="Student-card__name">{student.name}</h5>
+              {student.lovesReact && (
+                <p className="Student-card__preferences">I love it 🚀</p>
+              )}
+            </div>
+          </div>
+        ))}
