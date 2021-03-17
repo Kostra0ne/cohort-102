@@ -1,0 +1,17 @@
+[
+  {
+    "brand": "Ibanez",
+    "name": "RG870",
+    "inStock": true
+  },
+  {
+    "brand": "Martin",
+    "name": "Cool guitar",
+    "inStock": true
+  },
+  {
+    "brand": "Ibanez",
+    "name": "X9032",
+    "inStock": false
+  }
+]
