@@ -1,0 +1,11 @@
+.BoxColor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}

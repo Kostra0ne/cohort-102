@@ -1,0 +1,36 @@
+.DriverCard {
+  background-color: #455eb5;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+}
+
+.DriverCard__image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.DriverCard__image img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.DriverCard__content {
+  margin-left: 10px;
+}
+
+.DriverCard__name {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.DriverCard__content > * {
+  margin-bottom: 5px;
+}

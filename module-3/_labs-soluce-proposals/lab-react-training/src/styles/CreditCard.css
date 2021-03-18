@@ -1,0 +1,29 @@
+.CreditCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+  min-width: 300px;
+}
+
+.CreditCard__type {
+  text-align: right;
+}
+
+.CreditCard__type img {
+  height: 24px;
+}
+
+.CreditCard__number {
+  font-size: 1.75rem;
+  margin: 0 auto;
+}
+
+.CreditCard__info {
+  display: flex;
+}
+
+.CreditCard__info > :first-child {
+  margin-right: 20px;
+}
