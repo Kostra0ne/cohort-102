@@ -1,0 +1,23 @@
+[
+  {
+    "name": "SCHECTER BANSHEE MACH 7 FALLOUT BURST",
+    "brand": "SCHECTER",
+    "price": "1700",
+    "image": "https://www.woodbrass.com/en-gb/images/SQUARE400/woodbrass/HTD+SCH-BANSHEEMACH7-FOB.JPG",
+    "uuid": "a80fd130-87ea-11eb-8dcd-0242ac130003"
+  },
+  {
+    "name": "IBANEZ PREMIUM RG1120PBZ-CKB CHARCOAL BLACK BURST",
+    "brand": "IBANEZ",
+    "price": "1300",
+    "image": "https://www.woodbrass.com/en-gb/images/SQUARE400/woodbrass/HOSHINO+RG1120PBZ+CKB.JPG",
+    "uuid": "a80fd43c-87ea-11eb-8dcd-0242ac130003"
+  },
+  {
+    "name": "LTD GUITARS LEFT HANDED EC 1000 DELUXE SEE THRU BLACK CHERRY",
+    "brand": "LTD",
+    "price": "1700",
+    "image": "https://www.woodbrass.com/en-gb/images/SQUARE400/woodbrass/GES+EC1000LH-STBC.JPG",
+    "uuid": "a80fd52c-87ea-11eb-8dcd-0242ac130003"
+  }
+]
