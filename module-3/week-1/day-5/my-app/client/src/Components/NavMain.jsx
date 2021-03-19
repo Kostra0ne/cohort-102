@@ -6,6 +6,7 @@ const NavMain = () => {
     <nav>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/guitars">Guitars</NavLink>
+      <NavLink to="/guitars/new">Create your guitars</NavLink>
     </nav>
   );
 };
