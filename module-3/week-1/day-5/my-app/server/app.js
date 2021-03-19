@@ -52,4 +52,14 @@ app.get("/guitars/:id", (req, res, next) => {
     });
 });
 
+app.post("/guitars", (req, res, next) => {
+  Guitar.create(req.body)
+    .then((createdDocument) => {
+      res.json(createdDocument);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
 module.exports = app;
