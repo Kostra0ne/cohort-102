@@ -1,0 +1,14 @@
+.NumbersTable {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+}
+
+.NumbersTable__cell {
+  border: 1px solid black;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}

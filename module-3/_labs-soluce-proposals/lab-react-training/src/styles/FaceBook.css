@@ -1,0 +1,27 @@
+.FaceBook {
+  /* display: flex; */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  flex-wrap: wrap;
+}
+
+.FaceBook__profile {
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  border: 1px solid black;
+}
+
+.FaceBook__profile img {
+  height: 100px;
+  margin-right: 10px;
+}
+
+.FaceBook__field {
+  font-weight: bold;
+}
+
+.FaceBook__button {
+  padding: 5px 10px;
+}

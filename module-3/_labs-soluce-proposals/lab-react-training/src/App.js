@@ -8,6 +8,14 @@ import Rating from './Components/Rating';
 import DriverCard from './Components/DriverCard';
 import LikeButton from './Components/LikeButton';
 import ClickablePicture from './Components/ClickablePicture';
+import Dice from './Components/Dice';
+import Carousel from './Components/Carousel';
+import NumbersTable from './Components/NumbersTable';
+import FaceBook from './Components/FaceBook';
+import FaceBookAdvanced from './Components/FaceBookAdvanced';
+import SignupPage from './Components/SignupPage';
+import RGBColorPicker from './Components/RGBColorPicker';
+
 import './App.css';
 
 function App() {
@@ -123,6 +131,38 @@ function App() {
         img="/img/persons/maxence.png"
         imgClicked="/img/persons/maxence-glasses.png"
       />
+
+      <h2 className="App__title">10. Dice</h2>
+      <Dice />
+
+      <h2 className="App__title">11. Carousel</h2>
+
+      <Carousel
+        imgs={[
+          'https://randomuser.me/api/portraits/women/1.jpg',
+          'https://randomuser.me/api/portraits/men/1.jpg',
+          'https://randomuser.me/api/portraits/women/2.jpg',
+          'https://randomuser.me/api/portraits/men/2.jpg',
+        ]}
+      />
+
+      <h2 className="App__title">12. NumbersTable</h2>
+
+      <NumbersTable limit={12} />
+
+      <h2 className="App__title">13. FaceBook </h2>
+
+      <FaceBook />
+
+      <h2 className="App__title">14. FaceBookAdvanced </h2>
+      <FaceBookAdvanced />
+
+      <h2 className="App__title">15. SignupPage </h2>
+
+      <SignupPage />
+
+      <h2 className="App__title">16. RGBColorPicker</h2>
+      <RGBColorPicker />
     </div>
   );
 }
