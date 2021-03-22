@@ -3,6 +3,7 @@ const express = require("express");
 const router = new express.Router();
 const Toto = require("../models/Toto");
 
+// http://localhost:4000/api/totos VERB : GET
 router.get("/api/totos", (req, res, next) => {
   //   console.log("I am here");
   //   res.send("Welcome my friend");
