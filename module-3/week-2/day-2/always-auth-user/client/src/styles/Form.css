@@ -1,0 +1,36 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Form__title {
+  font-size: 1.725rem;
+}
+
+.Form__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.Form__field input {
+  padding: 10px 20px;
+}
+
+.Form__field label {
+  margin-bottom: 10px;
+}
+
+.Form__button {
+  border: 1px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+}
+
+.Form__button:hover {
+  background-color: white;
+  color: black;
+}

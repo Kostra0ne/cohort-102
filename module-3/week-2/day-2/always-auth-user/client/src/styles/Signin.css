@@ -1,0 +1,13 @@
+.Signin {
+  display: flex;
+}
+
+.Signin__form {
+  width: 50%;
+  padding: 60px 80px;
+}
+
+.Signin__welcome {
+  width: 50%;
+  padding: 40px 80px;
+}
