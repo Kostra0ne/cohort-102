@@ -1,0 +1,23 @@
+.NavMain {
+  background-color: red;
+  height: 80px;
+  display: flex;
+  padding: 0 40px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.NavMain a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.NavMain__link.active {
+  color: dodgerblue;
+}
+
+.NavMain__link:not(:last-child) {
+  margin-right: 20px;
+}
