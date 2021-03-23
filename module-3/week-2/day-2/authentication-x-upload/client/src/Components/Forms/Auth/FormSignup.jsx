@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "../../../styles/Form.css";
-import axios from "axios";
+import api from "../../../api";
 
 class FormSignup extends Component {
   state = {
@@ -17,17 +17,38 @@ class FormSignup extends Component {
     this.setState({ [name]: value });
   };
 
+  handleImage = (event) => {
+    const file = event.target.files[0]; // Get the value of file input
+    console.log(file);
+    // console.log(file, "this is the file");
+    this.setState({ avatar: file });
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const userInfo = {
-      email: this.state.email,
-      password: this.state.password,
-      username: this.state.username,
-    };
+    // const userInfo = {
+    //   email: this.state.email,
+    //   password: this.state.password,
+    //   username: this.state.username,
+    //   avatar: this.state.avatar,
+    // };
 
-    axios
-      .post("http://localhost:4000/api/auth/signup", userInfo)
+    const formData = new FormData();
+
+    // for (let key in userInfo) {
+    //   formData.append(key, userInfo[key]);
+    // }
+
+    formData.append("email", this.state.email);
+    formData.append("password", this.state.password);
+    formData.append("username", this.state.username);
+    formData.append("avatar", this.state.avatar);
+
+    // // axios
+    // .post("http://localhost:4000/api/auth/signup", userInfo)
+    api
+      .signup(formData)
       .then((response) => {
         this.props.history.push("/signin");
       })
@@ -39,7 +60,11 @@ class FormSignup extends Component {
 
   render() {
     return (
-      <form className="Form" onSubmit={this.handleSubmit}>
+      <form
+        className="Form"
+        onSubmit={this.handleSubmit}
+        enctype="multipart/form-data"
+      >
         <h3 className="Form__title">Signup</h3>
         {this.state.message && (
           <div>

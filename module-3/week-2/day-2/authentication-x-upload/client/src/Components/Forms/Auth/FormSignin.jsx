@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import "../../../styles/Form.css";
+import service from "../../../api";
 
 class FormSignin extends Component {
   state = {
@@ -16,10 +17,14 @@ class FormSignin extends Component {
       password: this.state.password,
     };
     //Submit
-    axios
-      .post("http://localhost:4000/api/auth/signin", userInfo, {
-        withCredentials: true, // Needed to forward the cookie sent from the api
-      })
+    // axios
+    //   .post("http://localhost:4000/api/auth/signin", userInfo, {
+    //     withCredentials: true, // Needed to forward the cookie sent from the api
+    //   })
+    // service
+    //   .signup("/auth/signin")
+    service
+      .signup(userInfo)
       .then((response) => {
         console.log(response.data);
         this.props.handleLogin(response.data);

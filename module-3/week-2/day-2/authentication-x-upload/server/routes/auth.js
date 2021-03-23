@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const protectAuth = require("../middlewares/protectAuth");
 const bcryptSalt = 10;
+const uploadToCloudinaryMiddleware = require("../config/cloudinaryConfig");
 
 router.post("/signin", (req, res, next) => {
   const { email, password } = req.body;
@@ -33,42 +34,50 @@ router.post("/signin", (req, res, next) => {
     });
 });
 
-router.post("/signup", (req, res, next) => {
-  const { email, password, username, avatar } = req.body;
+router.post(
+  "/signup",
+  uploadToCloudinaryMiddleware.single("avatar"),
+  (req, res, next) => {
+    const { email, password, username } = req.body;
 
-  if (!email || !password) {
-    res.status(400).json({ message: "Email and password required" });
-    return;
+    if (!email || !password) {
+      res.status(400).json({ message: "Email and password required" });
+      return;
+    }
+
+    User.findOne({ email })
+      .then((foundUser) => {
+        if (foundUser) {
+          res.status(400).json({ message: "Email already exists" });
+          return;
+        }
+
+        const hashedPassword = bcrypt.hashSync(password, bcryptSalt);
+
+        const newUser = {
+          email,
+          username,
+          // avatar,
+          password: hashedPassword,
+        };
+
+        if (req.file) {
+          newUser.avatar = req.file.path;
+        }
+
+        User.create(newUser)
+          .then((createdUser) => {
+            res.status(201).json({ message: "User account created" });
+          })
+          .catch((error) => {
+            next(error);
+          });
+      })
+      .catch((error) => {
+        next(error);
+      });
   }
-
-  User.findOne({ email })
-    .then((foundUser) => {
-      if (foundUser) {
-        res.status(400).json({ message: "Email already exists" });
-        return;
-      }
-
-      const hashedPassword = bcrypt.hashSync(password, bcryptSalt);
-
-      const newUser = {
-        email,
-        username,
-        avatar,
-        password: hashedPassword,
-      };
-
-      User.create(newUser)
-        .then((createdUser) => {
-          res.status(201).json({ message: "User account created" });
-        })
-        .catch((error) => {
-          next(error);
-        });
-    })
-    .catch((error) => {
-      next(error);
-    });
-});
+);
 
 router.get("/current-user", protectAuth, (req, res, next) => {
   //   if (!req.session.currentUser) {

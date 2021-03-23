@@ -7,6 +7,8 @@ import Signup from "./Views/Auth/Signup";
 import Profile from "./Views/Profile";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import axios from "axios";
+import api from "./api";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -24,10 +26,14 @@ class App extends React.Component {
 
   // Required for your API calls if you want information on page load
   componentDidMount() {
-    axios
-      .get("http://localhost:4000/api/auth/current-user", {
-        withCredentials: true, // Need to send this for session cookie
-      })
+    // axios
+    //   .get("http://localhost:4000/api/auth/current-user", {
+    //     withCredentials: true, // Need to send this for session cookie
+    //   })
+    // api.service
+    //   .get("/auth/current-user")
+    api
+      .getLoggedInUser()
       .then((response) => {
         this.setState({
           isLoading: false,
