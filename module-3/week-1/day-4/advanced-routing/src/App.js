@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <GuitarList />
+
       <Switch>
         <Route
           path="/guitars/:uuid"

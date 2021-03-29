@@ -34,7 +34,7 @@ function App() {
         <Route
           exact
           path="/about"
-          render={() => {
+          render={(historyProps) => {
             // If you need to pass a prop from parent to child
             // to one of your components, here from App to Home
             // you can use the "render" prop
